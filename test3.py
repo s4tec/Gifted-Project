@@ -10,6 +10,8 @@ ultrasonic = DistanceSensor(echo=17,trigger=27)
 
 # Starting text
 lcd.lcd_display_string("Digital Ruler",1,2)
+
+
 for a in range (0,16):
     lcd.lcd_display_string(".",2,a)
     sleep(0.2)
@@ -27,12 +29,15 @@ def Distance():
     
     A = "STOP"
     B = "GO"
+     # نقوم بتعديل الدالة الشرطية لتتكامل مع الريبوت بحيث في حالة وجود حاجز على بعد 20سم يقف الريبوت
     if cm <= 20 :
         lcd.lcd_display_string(A,2,0)
         lcd.lcd_display_string("  ",2,6)
     else :
         lcd.lcd_display_string(B,2,6)
         lcd.lcd_display_string("    ",2,0)
+    # نقوم بتعديل الكود بحيث في حالة وجود حاجز يقوم الربوت بالوقوف
+
     
     print(value)
     sleep(0.05)
